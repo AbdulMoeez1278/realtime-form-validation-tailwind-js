@@ -21,15 +21,15 @@ This project is a **responsive and interactive form** built using **Tailwind CSS
 
 | Field              | Type             | Validation Rules                                   |
 |-------------------|------------------|----------------------------------------------------|
-| First Name        | Text             | Required, min 2 characters, letters only           |
-| Last Name         | Text             | Required, min 2 characters, letters only           |
+| First Name        | Text             | Required, min 3 characters, letters only           |
+| Last Name         | Text             | Required, min 3 characters, letters only           |
 | Email             | Email            | Must be a valid email format                       |
-| Password          | Password         | Required, min 6 characters, strong password        |
+| Password          | Password         | Required, min 8+ characters, strong password        |
 | Confirm Password  | Password         | Must match Password                                |
 | Gender            | Radio Buttons    | Required (Male/Female/Other)                       |
 | Date of Birth     | Date             | Required                                           |
 | Message           | Textarea         | Optional, max 500 characters                       |
-| Upload Image      | File Input       | Optional, must be a valid image (JPG/PNG)          |
+| Upload Image      | File Input       | Optional, must be a valid image (All Formats)          |
 | Terms & Conditions| Checkbox         | Required                                           |
 
 ---
