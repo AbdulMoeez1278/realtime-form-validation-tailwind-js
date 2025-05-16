@@ -482,32 +482,33 @@ function submitForm2(th) {
 
   // gender validation
   if (th.classList.contains("gender")) {
-    if (th.classList.contains("gender")) {
-      if (!gender) {
-        genderError.textContent = "Please select your gender.";
-      } else {
-        genderError.textContent = ""; // 🟢 Clear the error as soon as any gender is selected
+    if (!gender) {
+      genderError.textContent = "Please select your gender.";
+    } else {
+      genderError.textContent = ""; // ✅ Gender selected
 
-        if (gender.value === "Other") {
-          if (formInputs.length === 0) {
-            otherGenderError.textContent = "Input field cannot be empty.";
-            th.classList.remove("border");
-            th.classList.add("border-error");
-          } else if (!/^[a-zA-Z]+$/.test(formInputs)) {
-            otherGenderError.textContent = "Only letters are allowed.";
-            th.classList.remove("border");
-            th.classList.add("border-error");
-          } else if (formInputs.length < 3) {
-            otherGenderError.textContent = "At least 3 characters required.";
-            th.classList.remove("border");
-            th.classList.add("border-error");
-          } else {
-            otherGenderError.textContent = "";
-          }
+      if (gender.value === "Other") {
+        if (formInputs.length === 0) {
+          otherGenderError.textContent = "Input field cannot be empty.";
+          extraInput.classList.remove("border");
+          extraInput.classList.add("border-error");
+        } else if (!/^[a-zA-Z]+$/.test(formInputs)) {
+          otherGenderError.textContent = "Only letters are allowed.";
+          extraInput.classList.remove("border");
+          extraInput.classList.add("border-error");
+        } else if (formInputs.length < 3) {
+          otherGenderError.textContent = "At least 3 characters required.";
+          extraInput.classList.remove("border");
+          extraInput.classList.add("border-error");
         } else {
-          // If not "Other", clear Other input field error
           otherGenderError.textContent = "";
+          extraInput.classList.remove("border-error");
+          extraInput.classList.add("border");
         }
+      } else {
+        // If gender is not Other, clear errors and border of 'Other' input
+        otherGenderError.textContent = "";
+        th.classList.remove("border-error");
       }
     }
   }
